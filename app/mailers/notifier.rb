@@ -45,6 +45,8 @@ class Notifier < ActionMailer::Base
     delivery_options = {user_name: user_name, password: params["console_license_email_password"]}
 
     @recipient = recipient
+    @website_hash = Options.website_params_hash
+
     mail(to: recipient, subject: "Im a test welcome email dude!", content_type: "text/html",
          delivery_method_options: delivery_options,
          from: "Adexsus License Manager <#{from}>"
