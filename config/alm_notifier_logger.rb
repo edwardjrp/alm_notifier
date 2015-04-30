@@ -10,7 +10,7 @@ class AlmNotifierLogger
     if env == 'development'
       file = File.expand_path("../logs.txt", __FILE__)
     else
-      file = File.expand_path("../logs.txt", __FILE__)
+      file = File.expand_path("/home/edward/alm_notifier/shared/logs/logs.txt", __FILE__)
     end
     @log = Logger.new(file,"weekly")
     @env = env
