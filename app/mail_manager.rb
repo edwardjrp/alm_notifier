@@ -18,6 +18,11 @@ class MailManager
     @logs = AlmNotifierLogger.new(@env)
   end
 
+  def welcome
+    delivery_email = "edwardjrp@gmail.com"
+    Notifier.welcome(delivery_email).deliver_now
+  end
+
   def licenses_expiring
     #Send notification to contacts about soon to expire licenses
     licenses_to_expire(90)

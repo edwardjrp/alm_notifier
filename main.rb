@@ -56,13 +56,13 @@ class AlmNotifier < Thor
     case mode
       when 'daemon'
         loop do
-          # mail_manager = MailManager.new(env)
-          # mail_manager.import_customers
+          mail_manager = MailManager.new(env)
+          mail_manager.welcome
           sleep(NAP_TIME)
         end
       else
-        # mail_manager = MailManager.new(env)
-        # mail_manager.import_customers
+        mail_manager = MailManager.new(env)
+        mail_manager.welcome
         puts 'DONE'
         puts ENV['ALM_ENV']
 

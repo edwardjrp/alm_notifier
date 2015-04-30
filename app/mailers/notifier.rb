@@ -34,7 +34,7 @@ class Notifier < ActionMailer::Base
   #default template_path: "app/views"
   layout "layout"
 
-  def welcome(recipient, env = 'development')
+  def welcome(recipient)
 
     #Spliting username from email since exchange authenticates without the @ part
     params = Options.console_params_hash
