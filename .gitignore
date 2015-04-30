@@ -1,0 +1,6 @@
+/config/logs*
+/bin/*
+.idea/
+.vagrant/
+.git/
+/hell/pids/*

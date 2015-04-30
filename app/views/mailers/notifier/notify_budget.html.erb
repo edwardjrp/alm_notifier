@@ -1,0 +1,46 @@
+<td bgcolor="#ffffff" style="padding: 40px 30px 40px 30px;">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td style="color: #EA5539; font-family: Arial, sans-serif; font-size: 24px;">
+				<b>Active Licenses for Budget Purposes.</b>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding: 15px 0 10px 0; color: #1B6795; font-family: Arial, sans-serif; font-size: 14px; line-height: 16px;">
+              <strong>Important!</strong> Below you will find a list of your active licenses.
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+              <!-- rest of the content is here-->
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr style="border:1px; color: #EA5539; font-family: Arial, sans-serif; font-size: 10px; line-height: 11px;">
+                  <th>Suite</th>
+                  <th>Description</th>
+                  <th>Expires on</th>
+                </tr>
+
+                <% @licenses.each do |license| %>
+                <tr style="border:1px; color: #1B6795; font-family: Arial, sans-serif; font-size: 10px; line-height: 11px; text-align: center">
+                  <td><%= license.suite_code %></td>
+                  <td>
+                    <%= license.suite_description %><br>
+                    <%= license.description %><br>
+                    <%= license.license_name %><br>
+                    Licensed By: <%= license.licensedby_name %><br>
+                  </td>
+                  <td><%= license.expiration_date %></td>
+                </tr>
+                <tr>
+                  <td style="border-top: thin solid;">&nbsp;</td>
+                  <td style="border-top: thin solid;">&nbsp;</td>
+                  <td style="border-top: thin solid;">&nbsp;</td>
+                </tr>
+                <% end %>
+              </table>
+
+			</td>
+		</tr>
+	</table>
+</td>

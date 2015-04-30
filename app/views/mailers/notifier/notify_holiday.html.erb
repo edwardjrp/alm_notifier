@@ -1,0 +1,18 @@
+<td bgcolor="#ffffff" style="padding: 40px 30px 40px 30px;">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td style="color: #EA5539; font-family: Arial, sans-serif; font-size: 24px;">
+				<b><%= @holiday.holidays %>  <% if @contact %> <%= @contact.contact %> <% end %></b>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+              <!-- rest of the content is here-->
+              <%= @holiday.message.html_safe %>
+
+            </td>
+ 		</tr>
+ 	</table>
+ </td>
+
