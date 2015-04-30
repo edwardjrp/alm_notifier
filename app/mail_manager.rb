@@ -31,7 +31,7 @@ class MailManager
       contacts = AlmCustomersContacts.can_notify
       contacts.each { |c|
 
-        delivery_email = c.workemail.squish.empty? ? c.personalemail.squish : c.workemail.squish
+        delivery_email = c.workemail.to_s.squish.empty? ? c.personalemail.to_s.squish : c.workemail.to_s.squish
         if delivery_email.empty?
           false
         else
@@ -119,7 +119,7 @@ class MailManager
                           licenses = c.licenses.active_licenses
                           #Checking if maincontact is present
                           if c.contacts.main_contact
-                            delivery_email = c.contacts.main_contact.workemail.squish.empty? ? c.contacts.main_contact.personalemail.squish : c.contacts.main_contact.workemail.squish
+                            delivery_email = c.contacts.main_contact.workemail.to_s.squish.empty? ? c.contacts.main_contact.personalemail.to_s.squish : c.contacts.main_contact.workemail.to_s.squish
                             if delivery_email.empty?
                               false
                             else
@@ -130,7 +130,7 @@ class MailManager
                             #Checking any available contact is present
                             contact =  c.contacts.first
                             if contact
-                              delivery_email = contact.workemail.squish.empty? ? contact.personalemail.squish : contact.workemail.squish
+                              delivery_email = contact.workemail.to_s.squish.empty? ? contact.personalemail.to_s.squish : contact.workemail.to_s.squish
                               if delivery_email.empty?
                                 false
                               else
@@ -151,7 +151,7 @@ class MailManager
                 else
                   #Holiday day_month db field has the format day,month and we are comparing it this way
                   day_month = "#{Date.today.day},#{Date.today.mon}"
-                  if day_month == holiday.day_month.squish
+                  if day_month == holiday.day_month.to_s.squish
                     Notifier.notify_holiday(delivery_email, holiday).deliver_now
                   end
 
@@ -190,7 +190,7 @@ class MailManager
 
         #Checking if maincontact is present
         if c.contacts.main_contact
-          delivery_email = c.contacts.main_contact.workemail.squish.empty? ? c.contacts.main_contact.personalemail.squish : c.contacts.main_contact.workemail.squish
+          delivery_email = c.contacts.main_contact.workemail.to_s.squish.empty? ? c.contacts.main_contact.personalemail.to_s.squish : c.contacts.main_contact.workemail.to_s.squish
           if delivery_email.empty?
             false
           else
@@ -201,7 +201,7 @@ class MailManager
           #Checking any available contact is present
           contact =  c.contacts.first
           if contact
-            delivery_email = contact.workemail.squish.empty? ? contact.personalemail.squish : contact.workemail.squish
+            delivery_email = contact.workemail.to_s.squish.empty? ? contact.personalemail.to_s.squish : contact.workemail.to_s.squish
             if delivery_email.empty?
               false
             else
