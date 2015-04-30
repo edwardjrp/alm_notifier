@@ -3,15 +3,15 @@ lock '3.2.1'
 
 # set :application, 'my_app_name'
 # set :repo_url, 'git@example.com:me/my_repo.git'
-set :application, 'orderbridge'
-set :repo_url, 'ssh://edward@lab.capa3.net/alm_notifier/alm_notifier.git'
+set :application, 'alm_notifier'
+set :repo_url, 'ssh://edward@lab.capa3.net:8022/home/edward/alm_notifier.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
 # set :deploy_to, '/var/www/my_app'
-set :deploy_to, '/alm_notifier/alm_notifier'
+set :deploy_to, '/home/edward/alm_notifier'
 set :keep_releases, 4
 
 # Default value for :scm is :git
@@ -41,7 +41,7 @@ set :format, :pretty
 # set :keep_releases, 5
 
 #If not set sometimes the default os tmp folder doesnt have the necessary permissions to accomplish the capistrano deployment operations
-set :tmp_dir, "/alm_notifier/alm_notifier/tmp"
+set :tmp_dir, "/home/edward/alm_notifier/tmp"
 
 namespace :deploy do
 
@@ -52,8 +52,8 @@ namespace :deploy do
       # execute :touch, release_path.join('tmp/restart.txt')
 
       # execute "ln -s /orderbridge/repository/ /orderbridge/orderbridge/current/repository"
-      # execute "ln -s /orderbridge/orderbridge/shared/pids /orderbridge/orderbridge/current/hell/pids"
-      # execute "chmod +x /orderbridge/orderbridge/current/hell/*.sh"
+      execute "ln -s /home/edward/alm_notifier/shared/pids /home/edward/alm_notifier/current/hell/pids"
+      execute "chmod +x /home/edward/alm_notifier/current/hell/*.sh"
 
     end
   end
