@@ -4,7 +4,7 @@ lock '3.2.1'
 # set :application, 'my_app_name'
 # set :repo_url, 'git@example.com:me/my_repo.git'
 set :application, 'alm_notifier'
-set :repo_url, 'ssh://edward@lab.capa3.net:8022/home/edward/alm_notifier.git'
+set :repo_url, 'ssh://edward@45.55.238.212:8022/home/edward/alm_notifier.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
