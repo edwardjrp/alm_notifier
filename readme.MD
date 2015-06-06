@@ -1,4 +1,4 @@
-# Console daemonizable email notificacion app
+# Console daemonizable email notificacion ruby app
 
 ## Overview
 This is a cli app who also can be daemonized uses the pretty cool thor gem and actionmailer gem to send notifications.
