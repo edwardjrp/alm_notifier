@@ -3,28 +3,28 @@ development:
   encoding: "utf8"
   host: "127.0.0.1"
   database: "alm"
-  username: "root"
-  password: "root"
+  username: "alm"
+  password: "changeme"
   port: 3306
   #socket: /tmp/mysql.sock
   timeout: 5000
-  mail_domain: "adexsus.com"
-  mail_host: "mail.adexsus.com"
+  mail_domain: "yourdomain.com"
+  mail_host: "mail.yourdomain.com"
   mail_port: 587
   mail_authentication: :login # :plain, :login or :cram_md5
 
 production:
   adapter: "mysql2"
   encoding: "utf8"
-  host: "172.17.42.1"
+  host: "127.0.0.1"
   database: "alm"
   username: "alm"
-  password: "4lm0nm4r14db"
+  password: "changeme"
   port: 3306
   #socket: /tmp/mysql.sock
   timeout: 5000
-  mail_domain: "adexsus.com"
-  mail_host: "mail.adexsus.com"
+  mail_domain: "yourdomain.com"
+  mail_host: "mail.yourdomain.com"
   mail_port: 587
   mail_authentication: :login # :plain, :login or :cram_md5
 

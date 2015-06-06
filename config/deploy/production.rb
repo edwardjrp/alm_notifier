@@ -7,7 +7,7 @@
 # role :app, %w{deploy@example.com}
 # role :web, %w{deploy@example.com}
 # role :db,  %w{deploy@example.com}
-role :app, %w{edward@45.55.238.212}
+role :app, %w{edward@yourserver.com}
 
 # Extended Server Syntax
 # ======================
@@ -16,7 +16,7 @@ role :app, %w{edward@45.55.238.212}
 # used to set extended properties on the server.
 
 # server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
-server '45.55.238.212', user: 'edward', port: 8022
+server 'yourserver.com', user: 'edward', port: 8022
 
 # Custom SSH Options
 # ==================
